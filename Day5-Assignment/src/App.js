@@ -1,6 +1,6 @@
 import "./App.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Kingdom from "./Components/Kingdom";
+import Kingdom from "./Components/Kingdom/Kingdom";
 
 function App() {
   return (
