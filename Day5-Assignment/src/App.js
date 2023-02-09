@@ -1,11 +1,19 @@
 import "./App.css";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Kingdom from "./Components/Kingdom/Kingdom";
+import React from "react";
+import ClassComponent from "./Assignment/Components/ClassComponent";
+import FunctionalComponent from "./Assignment/Components/FunctionalComponent";
+import CBCounterComponent from "./Assignment/Components/CBCounterComponent";
 
 function App() {
   return (
-    <div className="App">
-      <Kingdom></Kingdom>
+    <div>
+      <CBCounterComponent />
+      <br></br>
+      <br></br>
+      <ClassComponent />
+      <br></br>
+      <br></br>
+      <FunctionalComponent />F
     </div>
   );
 }
