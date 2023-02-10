@@ -26,33 +26,37 @@ export default function LivingThings() {
   const aboutUser =
     "  Krishna is an Full stack developer having 5 years of experience with Java and React";
 
-  const [item, setItem] = useState(
-    <Employees EmpName={EmpName} empDesignation={empDesignation}></Employees>
-  );
+  const [item, setItem] = useState("employees");
   return (
     <div>
-      {item}
+      <div>
+        {item === "birds" && (
+          <Birds description={aboutBird} birdName={birdName}></Birds>
+        )}
+      </div>
+      <div>
+        {item === "animals" && (
+          <Animals description={aboutLion} animalName={animalName}></Animals>
+        )}
+      </div>
+      <div>
+        {item === "users" && (
+          <Users userName={userName} aboutUser={aboutUser}></Users>
+        )}
+      </div>
+      <div>
+        {item === "employees" && (
+          <Employees
+            EmpName={EmpName}
+            empDesignation={empDesignation}
+          ></Employees>
+        )}
+      </div>
+
       <Stack gap={4} className="col-md-2 mx-auto" direction="horizontal">
         <div id="contentArea"></div>
-        <Button
-          onClick={() =>
-            setItem(
-              <Animals
-                description={aboutLion}
-                animalName={animalName}
-              ></Animals>
-            )
-          }
-        >
-          Animals
-        </Button>
-        <Button
-          onClick={() =>
-            setItem(<Users userName={userName} aboutUser={aboutUser}></Users>)
-          }
-        >
-          Users
-        </Button>
+        <Button onClick={() => setItem("animals")}>Animals</Button>
+        <Button onClick={() => setItem("users")}>Users</Button>
         <Button
           onClick={() =>
             setItem(
@@ -65,13 +69,7 @@ export default function LivingThings() {
         >
           Employees
         </Button>
-        <Button
-          onClick={() =>
-            setItem(<Birds description={aboutBird} birdName={birdName}></Birds>)
-          }
-        >
-          Birds
-        </Button>
+        <Button onClick={() => setItem("birds")}>Birds</Button>
       </Stack>
     </div>
   );

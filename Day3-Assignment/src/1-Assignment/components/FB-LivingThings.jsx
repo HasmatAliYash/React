@@ -7,18 +7,20 @@ import Animals from "./FB-Animals";
 import Employees from "./FB-Employees";
 
 export default function LivingThings() {
-  const [item, setItem] = useState(<Birds></Birds>);
+  const [item, setItem] = useState("birds");
   return (
     <div>
-      {item}
+      <div>{item === "birds" && <Birds></Birds>}</div>
+      <div>{item === "animals" && <Animals></Animals>}</div>
+      <div>{item === "users" && <Users></Users>}</div>
+      <div>{item === "employees" && <Employees></Employees>}</div>
+
       <Stack gap={4} className="col-md-2 mx-auto" direction="horizontal">
         <div id="contentArea"></div>
-        <Button onClick={() => setItem(<Animals></Animals>)}>Animals</Button>
-        <Button onClick={() => setItem(<Users></Users>)}>Users</Button>
-        <Button onClick={() => setItem(<Employees></Employees>)}>
-          Employees
-        </Button>
-        <Button onClick={() => setItem(<Birds></Birds>)}>Birds</Button>
+        <Button onClick={() => setItem("animals")}>Animals</Button>
+        <Button onClick={() => setItem("users")}>Users</Button>
+        <Button onClick={() => setItem("employees")}>Employees</Button>
+        <Button onClick={() => setItem("birds")}>Birds</Button>
       </Stack>
     </div>
   );
